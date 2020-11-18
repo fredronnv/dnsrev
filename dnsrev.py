@@ -213,6 +213,8 @@ for line in fwd:
 		continue
 	
 	name, _, address = m.groups()
+	if '*' in name:
+		continue
 	for f in rev_files:
 		if ipaddr.IPNetwork(address) in f.sno:
 			if f.sno.ip.version == 4 and f.sno.prefixlen > 24:
