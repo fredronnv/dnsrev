@@ -173,7 +173,7 @@ for fn, zone in cfg["FWD_ZONES"]:
 
 
 # Get all manually-set reverse info (and don't autogen that part).
-revre = dns_re(["PTR", "SOA"])
+revre = dns_re(["PTR", "SOA", "CNAME"])
 for f in rev_files:
 	cont = open(f.fn).read()
 	parts = cont.split(AUTO_SEP)
