@@ -190,7 +190,7 @@ for f in rev_files:
 			continue
 		mg = m.groups()
 		
-		if mg[1] == "PTR":
+		if mg[1] in  ["PTR", "CNAME"]:
 			label, _, name = m.groups()
 			f.manual[label] = name
 		else:
